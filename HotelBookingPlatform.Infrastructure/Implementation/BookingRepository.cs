@@ -26,7 +26,7 @@ public class BookingRepository : GenericRepository<Booking>, IBookingRepository
         await _appDbContext.SaveChangesAsync();
     }
 
-    public async Task<Booking> GetByIdAsync(int id)
+    public new async Task<Booking> GetByIdAsync(int id)
     {
         return await _appDbContext.Bookings
             .Include(b => b.Hotel)

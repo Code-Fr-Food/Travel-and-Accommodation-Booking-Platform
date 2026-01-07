@@ -19,7 +19,7 @@ public class AppDbContext : IdentityDbContext<LocalUser>
         modelBuilder.ApplyConfiguration(new ReviewConfiguration());
     }
     public DbSet<Hotel> Hotels { get; set; }
-    public DbSet<Owner> owners { get; set; }
+    public DbSet<Owner> Owners { get; set; }
     public DbSet<City> Cities { get; set; }
     public DbSet<Booking> Bookings { get; set; }
     public DbSet<LocalUser> LocalUsers { get; set; }

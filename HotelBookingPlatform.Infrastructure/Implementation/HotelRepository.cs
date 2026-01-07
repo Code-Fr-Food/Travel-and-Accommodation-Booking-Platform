@@ -54,7 +54,7 @@ public class HotelRepository : GenericRepository<Hotel>, IHotelRepository
         return await query.ToListAsync();
     }
 
-    public async Task<IEnumerable<Hotel>> GetAllAsyncPagenation(Expression<Func<Hotel, bool>> filter = null, int pageSize = 10, int pageNumber = 1)
+    public async Task<IEnumerable<Hotel>> GetAllAsyncPagenation(Expression<Func<Hotel, bool>>? filter = null, int pageSize = 10, int pageNumber = 1)
     {
         if (pageSize <= 0)
             throw new ArgumentOutOfRangeException(nameof(pageSize), "Page size must be greater than zero.");
@@ -84,7 +84,7 @@ public class HotelRepository : GenericRepository<Hotel>, IHotelRepository
         return await PaginateHotelsAsync(GetHotelsWithIncludes(), pageSize, pageNumber);
     }
 
-    public async Task<Hotel> GetByIdAsync(int id)
+    public new async Task<Hotel> GetByIdAsync(int id)
     {
         return await GetHotelsWithIncludes()
              .FirstOrDefaultAsync(h => h.HotelId == id)

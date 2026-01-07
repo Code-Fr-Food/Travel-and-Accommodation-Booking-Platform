@@ -2,10 +2,10 @@
 namespace HotelBookingPlatform.Domain.Entities;
 public class LocalUser : IdentityUser
 {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public ICollection<Booking> Bookings { get; set; }
-    public ICollection<Review> Reviews { get; set; }
+    public string FirstName { get; set; } = string.Empty;
+    public string LastName { get; set; } = string.Empty;
+    public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
+    public ICollection<Review> Reviews { get; set; } = new List<Review>();
     public List<RefreshToken>? RefreshTokens { get; set; }
 
 }

@@ -37,7 +37,7 @@ public class OwnerRepositoryTest
         owner1.Hotels = hotelsForOwner1;
         owner2.Hotels = hotelsForOwner2;
 
-        _context.owners.AddRange(owner1, owner2);
+        _context.Owners.AddRange(owner1, owner2);
         _context.Hotels.AddRange(hotelsForOwner1.Concat(hotelsForOwner2));
         await _context.SaveChangesAsync();
 
@@ -56,7 +56,7 @@ public class OwnerRepositoryTest
     {
         // Arrange
         var owner = CreateOwner(1);
-        _context.owners.Add(owner);
+        _context.Owners.Add(owner);
         await _context.SaveChangesAsync();
 
         // Act
@@ -75,7 +75,7 @@ public class OwnerRepositoryTest
 
         // Act
         await _sut.CreateAsync(owner);
-        var createdOwner = await _context.owners.FindAsync(owner.OwnerID);
+        var createdOwner = await _context.Owners.FindAsync(owner.OwnerID);
 
         // Assert
         Assert.NotNull(createdOwner);

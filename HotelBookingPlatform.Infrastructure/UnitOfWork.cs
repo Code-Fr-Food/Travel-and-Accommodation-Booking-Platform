@@ -4,7 +4,6 @@ public class UnitOfWork<T> : IUnitOfWork<T> where T : class
 {
     private readonly AppDbContext _context;
     private readonly UserManager<LocalUser> _userManager;
-    private readonly ILog _logger;
 
     public UnitOfWork(AppDbContext context, UserManager<LocalUser> userManager)
     {

@@ -6,10 +6,10 @@ public static class ModuleInfrastructureDependencies
         var serviceProvider = services.BuildServiceProvider();
         var configuration = serviceProvider.GetService<IConfiguration>();
 
-
         services.AddDbContext<AppDbContext>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+            options.UseNpgsql(configuration?.GetConnectionString("DefaultConnection"))
         );
+
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         services.AddScoped<IRoomClasseRepository, RoomClassRepository>();
         services.AddScoped<ICityRepository, CityRepository>();

@@ -3,6 +3,7 @@
 global using HotelBookingPlatform.Domain.Entities;
 global using Microsoft.EntityFrameworkCore.Metadata.Builders;
 global using Microsoft.EntityFrameworkCore;
+global using Npgsql.EntityFrameworkCore.PostgreSQL;
 global using HotelBookingPlatform.Infrastructure.Configuration;
 global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 global using HotelBookingPlatform.Domain;

@@ -5,14 +5,14 @@ public class DiscountRepository : GenericRepository<Discount> ,IDiscountReposito
         : base(context)
     {
     }
-    public async Task<IEnumerable<Discount>> GetAllAsync(Expression<Func<IQueryable<Discount>, IQueryable<Discount>>> include = null)
+    public async Task<IEnumerable<Discount>> GetAllAsync(Expression<Func<IQueryable<Discount>, IQueryable<Discount>>>? include = null)
     {
         var query = _appDbContext.Discounts.AsQueryable();
         query = query.Include(d => d.Room);
 
         return await query.ToListAsync();
     }
-    public async Task<Discount> GetByIdAsync(int id, Expression<Func<IQueryable<Discount>, IQueryable<Discount>>> include = null)
+    public async Task<Discount> GetByIdAsync(int id, Expression<Func<IQueryable<Discount>, IQueryable<Discount>>>? include = null)
     {
         var query = _appDbContext.Discounts.AsQueryable();
         query = query.Include(d => d.Room);   
@@ -30,7 +30,7 @@ public class DiscountRepository : GenericRepository<Discount> ,IDiscountReposito
         return await query.ToListAsync();
     }
 
-    public async Task DeleteAsync(int id)
+    public new async Task DeleteAsync(int id)
     {
         var discount = await _appDbContext.Discounts.FindAsync(id);
         if (discount is not null)

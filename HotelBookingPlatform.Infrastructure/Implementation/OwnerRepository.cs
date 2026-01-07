@@ -5,7 +5,7 @@ public class OwnerRepository : GenericRepository<Owner>, IOwnerRepository
         : base(context) { }
     public async Task<IEnumerable<Owner>> GetAllWithHotelsAsync()
     {
-        return await _appDbContext.owners
+        return await _appDbContext.Owners
             .Include(h => h.Hotels)
             .ToListAsync();
     }

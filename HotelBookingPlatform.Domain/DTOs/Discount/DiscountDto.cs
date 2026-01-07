@@ -2,7 +2,7 @@
 public class DiscountDto
 {
     public int DiscountID { get; set; }
-    public string RoomNumber { get; set; }
+    public string RoomNumber { get; set; } = string.Empty;
     public decimal Percentage { get; set; }
     public DateTime StartDateUtc { get; set; }
     public DateTime EndDateUtc { get; set; }
