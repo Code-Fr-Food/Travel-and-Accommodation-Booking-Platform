@@ -7,17 +7,16 @@ using HotelBookingPlatform.Application.Core.Implementations.HotelManagementServi
 using HotelBookingPlatform.Application.Core.Implementations.RoomClassManagementService;
 
 namespace HotelBookingPlatform.Application.Extentions;
+
 public static class ModuleApplicationDependencies
 {
     public static IServiceCollection AddApplicationDependencies(this IServiceCollection services)
     {
         services.AddHttpContextAccessor();
 
-        services.AddFluentValidation(fv =>
-        {
-            fv.RegisterValidatorsFromAssemblyContaining<OwnerValidator>();
-            fv.RegisterValidatorsFromAssemblyContaining<RegisterUserValidator>();
-        });
+        services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
+        services.AddValidatorsFromAssemblyContaining<OwnerValidator>();
+        services.AddValidatorsFromAssemblyContaining<RegisterUserValidator>();
 
         services.AddScoped<IPriceCalculationService, PriceCalculationService>();
         services.AddScoped<IConfirmationNumberGeneratorService, ConfirmationNumberGeneratorService>();
