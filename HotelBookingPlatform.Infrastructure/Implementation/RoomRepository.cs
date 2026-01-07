@@ -19,7 +19,7 @@ public class RoomRepository : GenericRepository<Room>, IRoomRepository
 
         return availableRooms;
     }
-    public async Task<Room> GetByIdAsync(int id)
+    public new async Task<Room> GetByIdAsync(int id)
     {
         return await _appDbContext.Rooms
             .Include(r => r.RoomClass)

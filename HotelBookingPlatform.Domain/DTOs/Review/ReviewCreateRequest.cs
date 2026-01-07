@@ -2,7 +2,7 @@
 public class ReviewCreateRequest
 {
     public int HotelId { get; set; }
-    public string Content { get; set; }
+    public string Content { get; set; } = string.Empty;
     public int Rating { get; set; }
-    public string Email { get; set; }
+    public string Email { get; set; } = string.Empty;
 }

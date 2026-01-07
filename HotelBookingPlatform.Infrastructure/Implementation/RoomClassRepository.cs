@@ -44,13 +44,13 @@ public class RoomClassRepository : GenericRepository<RoomClass>, IRoomClasseRepo
             .ToListAsync();
     }
 
-    public async Task<IEnumerable<RoomClass>> GetAllAsync()
+    public new async Task<IEnumerable<RoomClass>> GetAllAsync()
     {
         return await ApplyIncludes(_appDbContext.RoomClasses, includeDiscounts: true, includeAmenities: false, includeRooms: false, includeHotel: false)
             .ToListAsync();
     }
 
-    public async Task<RoomClass> GetByIdAsync(int id)
+    public new async Task<RoomClass> GetByIdAsync(int id)
     {
         return await ApplyIncludes(_appDbContext.RoomClasses, includeDiscounts: false, includeAmenities: false, includeRooms: false, includeHotel: true)
             .FirstOrDefaultAsync(rc => rc.RoomClassID == id);

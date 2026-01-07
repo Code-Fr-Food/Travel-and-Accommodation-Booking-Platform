@@ -309,7 +309,7 @@ The Generic Repository pattern provides a way to manage CRUD operations in a con
 #### 1. **System Requirements**
 
 - **Operating System**: Windows 10 or higher, macOS, or Linux
-- **Software**: .NET Core SDK 6.0 or later, Node.js (if applicable), Docker (if using containers)
+- **Software**: .NET 8.0 SDK or later, Node.js (if applicable), Docker (if using containers)
 - **Hardware**: Minimum 4 GB RAM, 2 CPU cores
 
 #### 2. **Clone the Repository**

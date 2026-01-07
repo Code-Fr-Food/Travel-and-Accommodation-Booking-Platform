@@ -22,7 +22,7 @@ public class CityRepository : GenericRepository<City>, ICityRepository
             .Take(topCount)
             .ToListAsync();
     }
-    public async Task CreateAsync(City city)
+    public new async Task CreateAsync(City city)
     {
         if (await _appDbContext.Cities.AnyAsync(c => c.Name == city.Name))
             throw new InvalidOperationException("City with the same name already exists.");

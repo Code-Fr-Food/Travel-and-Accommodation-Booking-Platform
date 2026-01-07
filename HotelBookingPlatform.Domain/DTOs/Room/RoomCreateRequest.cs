@@ -1,7 +1,7 @@
 ﻿namespace HotelBookingPlatform.Domain.DTOs.Room;
 public class RoomCreateRequest
 {
-    public string Number { get; set; }
+    public string Number { get; set; } = string.Empty;
     public int AdultsCapacity { get; set; }
     public int ChildrenCapacity { get; set; }
     public decimal PricePerNight { get; set; }

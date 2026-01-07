@@ -7,7 +7,7 @@ public class Discount
     public DateTime StartDateUtc { get; set; }
     public DateTime EndDateUtc { get; set; }
     public DateTime CreatedAtUtc { get; set; }
-    public Room Room { get; set; }
+    public Room Room { get; set; } = null!;
     public bool IsActive { get; set; } 
     public Discount()
     {

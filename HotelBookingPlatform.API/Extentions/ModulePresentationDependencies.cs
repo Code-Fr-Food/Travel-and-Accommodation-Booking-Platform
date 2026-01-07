@@ -1,11 +1,9 @@
-﻿using Microsoft.Extensions.Configuration;
-
-namespace HotelBookingPlatform.API.Extentions;
+﻿namespace HotelBookingPlatform.API.Extentions;
 public static class ModulePresentationDependencies
 {
     public static IServiceCollection AddPresentationDependencies(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddSingleton<IConfiguration>(configuration);
+        services.AddSingleton(configuration);
 
         // Add Identity services
         services.AddIdentity<LocalUser, IdentityRole>()
